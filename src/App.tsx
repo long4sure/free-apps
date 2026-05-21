@@ -1,4 +1,5 @@
 import { HashRouter, Navigate, Route, Routes } from 'react-router-dom'
+import { ConfigBanner } from '@/components/ConfigBanner'
 import { AuthProvider } from '@/contexts/AuthContext'
 import { SystemProvider } from '@/contexts/SystemContext'
 import { ProtectedRoute } from '@/components/ProtectedRoute'
@@ -17,6 +18,7 @@ export default function App() {
     <HashRouter>
       <AuthProvider>
         <SystemProvider>
+          <ConfigBanner />
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/login" element={<LoginPage />} />
